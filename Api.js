@@ -16,6 +16,7 @@ const changePokemon=async ()=>{
 const changePrev=async ()=>{
   let requestString=`https://pokeapi.co/api/v2/pokemon/${prev}`
   prev--;
+  
   let data = await fetch(requestString);
   let response = await data.json()
   image.src =response.sprites.front_default
