@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>APplication Api</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <style> 
     *{
@@ -13,7 +14,7 @@
 
     }
     body{
-        height: 75vh;
+        height: 100vh;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -22,29 +23,19 @@
     }
     #wrapper{
         display: flex;
-        align-items: center;
         justify-content: center;
         flex-direction: column;
         background-color: white;
-        border: 40px;
         min-height: 50vh;
-        width: 40%;
-        padding-top: 20px;
+        border-radius: 12px;
+        width: 300px;
     }
     #image-wrapper{
-        padding-top: 20px;
-        width: 140px;
+       
+    
     }
     #image{
         width: 100%;
-    }
-    #header{
-        padding: 20px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        font-size: 30px;
     }
     #number{
         margin-right: 15px;
@@ -52,7 +43,12 @@
     #name{
         text-transform: capitalize;
     }
-    #button{
+    #header{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .button{
         background-color: #ff7A22;
         border-radius: 5px;
         color: white;
@@ -60,15 +56,28 @@
         padding: 10px 30px;
         cursor: pointer;
         transition: all 0.2s ease;
+        text-align: center;
     }
-    #button:hover{
-        transform: translateY(-2px);
-        background-color: rgb(225, 136,57);
+    
+    .card{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
     }
-    #button:active{
-        transform: translateY(2px);
-        background-color: #ff7A22;
+    .handleButton{
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-around;
+        margin: 20px 0;
+        
     }
+    #name,#number{
+        font-size: 16px;
+        font-weight: bold;
+
+    }
+
 
 </style>
 <body>
@@ -76,13 +85,16 @@
         <div id="image-wrapper">
             <img id="image" src="" alt="">
         </div>
-        <div id="header">
+        <div id="card">
             <div id="header">
                 <div id="number"></div>
                 <div id="name"></div>
 
             </div>
-            <div id="button">Get other pokemon</div>
+            <div class="handleButton">
+                <div class="button buttonNext"><i class='bx bx-right-arrow bx-sm'></i></div>
+            <div class="button buttonPrev"><i class='bx bx-left-arrow bx-sm'></i></div>
+            </div>
         </div>
 </div>
     <script src="Api.js"></script>
