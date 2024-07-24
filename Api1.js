@@ -1,11 +1,11 @@
 /**
  * permet de recuperer sous forme de tableau les adresse des images
  * @param {string} key 
- * @param {string} imageCollection 
+ * @param {string} searchTerm  
  * @returns Array
  */
-async function request(key,imageCollection) {
-  const response = await fetch(`https://pixabay.com/api/?key=${encodeURIComponent(key)}&q=${imageCollection}&image_type=photo`);
+async function request(key,searchTerm) {
+  const response = await fetch(`https://pixabay.com/api/?key=${encodeURIComponent(key)}&q=${searchTerm}&image_type=photo`);
   const data = await response.json();
   if (!response.ok) {
     throw new Error('Une erreur s\'est produite lors de la requête API.');
